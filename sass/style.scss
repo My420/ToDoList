@@ -3,10 +3,9 @@
 @import "variables.scss";
 @import "global.scss";
 
-@import "./block/field.scss";
+@import "./block/page-header.scss";
+@import "./block/app.scss";
+@import "./block/input.scss";
+@import "./block/tasks.scss";
 @import "./block/controls.scss";
-@import "./block/page_header.scss";
-@import "./block/page_footer.scss";
-@import "./block/contacts.scss";
-@import "./block/state.scss";
-@import "./block/page_main.scss";
+

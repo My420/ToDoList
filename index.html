@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Game of Life</title>
+  <title>ToDoList</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Игра «Жизнь» (англ. Conway's Game of Life) — клеточный автомат, придуманный английским математиком Джоном Конвеем в 1970 году.">
-  <meta name="keywords" content="игра, игра «Жизнь», эмуляция Жизни, математика, клеточный автомат">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <meta name="description" content="ToDoList — веб-сервис для управления задачами.">
+  <meta name="keywords" content="todolist, список дел, список задач, управление задачами">
+  <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/png"> -->
   <link href="css/style.min.css" rel="stylesheet">
   <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
@@ -14,30 +14,61 @@
 </head>
 <body class="main_page">
 
-  <header class="page_header">
-    <h1 class="page_header__title">Game of Life</h1>
-    <p class="page_header__rules">
-      <a class="page_header__link" href="https://ru.wikipedia.org/wiki/%D0%98%D0%B3%D1%80%D0%B0_%C2%AB%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%C2%BB"><span class="visually-hidden ">Об игре</span></a>
-    </p>
-  </header>
+  <div class="page_header__wrapper container">
+    <header class="page_header">
+      <h1 class="page_header__title">ToDoList</h1>
 
-  <main class="page_main">
-    <section class="page_main__game field">
-      <h2 class="visually-hidden">Поле игры</h2>
+      <section class="app__input-field input">
+        <h3 class="visually-hidden">Поле ввода</h3>
+        <label class="visually-hidden" for="text-input">Введите задачу</label>
+        <input  class="input__field" id="text-input" type="text" placeholder="What needs to be done?">
+        <button class="input__button button"><span class="visually-hidden">Записать</span></button>
+        </button>
+      </section>
+
+    </header>
+  </div>
+
+  <main class="app">
+
+    <h2 class="visually-hidden">Приложение</h2>
+
+    <section class="app__task-list tasks">
+      <h3 class="visually-hidden">Задачи</h3>
+      <ul class="tasks__list">
+        <li class="tasks__item">
+            <input class="tasks__checkbox visually-hidden" id="1" type="checkbox">
+            <label class="tasks__label" for="1"></label>
+            <p class="tasks__text">asdads</p>
+        </li>
+        <li class="tasks__item">
+          <input class="tasks__checkbox visually-hidden" id="2" type="checkbox">
+          <label class="tasks__label" for="2"></label>
+          <p class="tasks__text">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfdsfsdfsdfsdf sdfsdfsdf sdfsdf sfsdfs df sdfsdf</p>
+        </li>
+        <li class="tasks__item">
+          <input class="tasks__checkbox visually-hidden" id="3" type="checkbox">
+          <label class="tasks__label" for="3"></label>
+          <p class="tasks__text">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfsdfssdf sdfsdf sdfsdf df</p>
+        </li>
+      </ul>
     </section>
-    <section class="page_main__controls controls">
-      <h2 class="visually-hidden">Управление игрой</h2>
-      <button class="controls__button" data-action="start">Start</button>
-      <button class="controls__button" data-action="oneStep">One Step</button>
-      <button class="controls__button" data-action="pause">Pause</button>
-      <button class="controls__button" data-action="reset">Reset</button>
-      <button class="controls__button" data-action="random">Random</button>
-      <div class="controls__wrapper">
-        <button class="controls__button controls__button--speedUp"  data-action="speedUp" disabled>Up</button>
-        <output class="controls__output">400ms</output>
-        <button class="controls__button controls__button--speedDown"  data-action="speedDown" disabled>Down</button>
-      </div>
+
+    <section class="app__controls controls">
+      <h3 class="visually-hidden">Управление</h3>
+      <section class="controls__delete">
+        <h4 class="visually-hidden">Удаление</h4>
+        <button class="controls__button controls__button--delete">Delete</button>
+      </section>
+      <section class="controls__sort">
+        <h4 class="controls__label">Sort:</h4>
+        <button class="controls__button controls__button--sortAll controls__button--active">All</button>
+        <button class="controls__button controls__button--sortActive">Active</button>
+        <button class="controls__button controls__button--sortComplited">Complited</button>
+      </section>
     </section>
+
+
   </main>
 
   <footer class="page_footer">

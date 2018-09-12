@@ -1,0 +1,45 @@
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 87.5%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $bg-main-2;
+}
+
+.controls__button {
+  display: inline-block;
+  border: none;
+  background: none;
+  color: $text-second;
+  outline: none;
+}
+
+.controls__label {
+  display: inline-block;
+}
+
+.controls__button:hover {
+  box-shadow: 0px 0px 2px 2px;
+}
+
+.controls__button:active {
+  box-shadow: 0px 0px 2px 2px $text-main;
+  color: $text-main;
+}
+
+.controls__button--delete:before {
+  transform: rotate(-45deg);
+}
+
+.controls__button--active {
+  color: $text-main;
+  text-decoration: underline;
+}
+
+.controls__button--active:active {
+  box-shadow: 0px 0px 2px 2px $text-second;
+  color: $text-second;
+}

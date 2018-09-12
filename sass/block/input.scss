@@ -1,0 +1,23 @@
+.input {
+  width: 280px;
+  margin: 10px auto;
+}
+
+.input__field {
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: $bg-main-2;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid $text-main;
+  text-align: center;
+  outline: none;
+}
+
+.input__button {
+  display: none;
+}

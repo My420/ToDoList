@@ -6,22 +6,27 @@ p, ul, li, legend, fieldset, blockquote, body {
 
 body {
   min-width: 320px;
-  background-color: #143758;
+  background-color: $bg-main;
   font-family: "Open Sans", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  color: #08457E;
+  font-size: 14px;
+  line-height: 24px;
+  color: $text-main;
+}
+
+.container {
+  width: 87.5%;
+  margin: 0 auto;
 }
 
 input, textarea, output {
   font-family: "Open Sans", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  color: #283645;
+  font-size: 14px;
+  line-height: 24px;
+  color: $text-main;
 }
 
 .visually-hidden:not(:focus):not(:active),
