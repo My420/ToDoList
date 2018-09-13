@@ -14,17 +14,18 @@
 </head>
 <body class="main_page">
 
-  <div class="page_header__wrapper container">
-    <header class="page_header">
-      <h1 class="page_header__title">ToDoList</h1>
+  <div class="page-header__wrapper container">
+    <header class="page-header">
+      <h1 class="page-header__title">ToDoList</h1>
 
       <section class="app__input-field input">
         <h3 class="visually-hidden">Поле ввода</h3>
         <label class="visually-hidden" for="text-input">Введите задачу</label>
         <input  class="input__field" id="text-input" type="text" placeholder="What needs to be done?">
         <button class="input__button button"><span class="visually-hidden">Записать</span></button>
-        </button>
       </section>
+
+      <button class="page-header__button"><span class="visually-hidden">Контакты</span>&#105;</button>
 
     </header>
   </div>
@@ -39,17 +40,37 @@
         <li class="tasks__item">
             <input class="tasks__checkbox visually-hidden" id="1" type="checkbox">
             <label class="tasks__label" for="1"></label>
-            <p class="tasks__text">asdads</p>
+            <label class="tasks__text" for="1">asdads</label>
         </li>
         <li class="tasks__item">
           <input class="tasks__checkbox visually-hidden" id="2" type="checkbox">
           <label class="tasks__label" for="2"></label>
-          <p class="tasks__text">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfdsfsdfsdfsdf sdfsdfsdf sdfsdf sfsdfs df sdfsdf</p>
+          <label class="tasks__text" for="2">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfdsfsdfsdfsdf sdfsdfsdf sdfsdf sfsdfs df sdfsdf</label>
         </li>
         <li class="tasks__item">
           <input class="tasks__checkbox visually-hidden" id="3" type="checkbox">
           <label class="tasks__label" for="3"></label>
-          <p class="tasks__text">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfsdfssdf sdfsdf sdfsdf df</p>
+          <label class="tasks__text" for="3">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfsdfssdf sdfsdf sdfsdf df</label>
+        </li>
+         <li class="tasks__item">
+          <input class="tasks__checkbox visually-hidden" id="4" type="checkbox">
+          <label class="tasks__label" for="4"></label>
+          <label class="tasks__text" for="4">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfsdfssdf sdfsdf sdfsdf df</label>
+        </li>
+         <li class="tasks__item">
+          <input class="tasks__checkbox visually-hidden" id="5" type="checkbox">
+          <label class="tasks__label" for="5"></label>
+          <label class="tasks__text" for="5">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfsdfssdf sdfsdf sdfsdf df</label>
+        </li>
+         <li class="tasks__item">
+          <input class="tasks__checkbox visually-hidden" id="6" type="checkbox">
+          <label class="tasks__label" for="6"></label>
+          <label class="tasks__text" for="6">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfsdfssdf sdfsdf sdfsdf df</label>
+        </li>
+         <li class="tasks__item">
+          <input class="tasks__checkbox visually-hidden" id="7" type="checkbox">
+          <label class="tasks__label" for="7"></label>
+          <label class="tasks__text" for="7">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfsdfssdf sdfsdf sdfsdf df</label>
         </li>
       </ul>
     </section>
@@ -71,8 +92,9 @@
 
   </main>
 
-  <footer class="page_footer">
-    <ul class="page_footer__contacts contacts">
+  <footer class="page-footer page-footer--clos">
+    <button class="page-footer__button"><span class="visually-hidden">Закрыть контакты</span>X</button>
+    <ul class="page-footer__contacts contacts">
       <li class="contacts__item">
         <a class="contacts__link contacts__link--github" href="#"><span class="visually-hidden">Github</span></a>
       </li>

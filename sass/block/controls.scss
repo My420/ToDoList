@@ -1,8 +1,14 @@
 .controls {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 2;
+  bottom: 0vh;
+  left: 0vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 87.5%;
+  width: 100%;
+  min-height:45px;
   margin: 0 auto;
   padding-top: 10px;
   padding-bottom: 10px;

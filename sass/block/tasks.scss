@@ -70,9 +70,18 @@
 }
 
 .tasks__item:last-child {
-  border-bottom: 2px solid $bg-main-2;
+  border: 2px solid $bg-main-2;
 }
 
 .tasks__item:first-child {
   border-top: none;
 }
+
+.tasks__text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 46px;
+    vertical-align: middle;
+}
+

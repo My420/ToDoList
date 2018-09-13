@@ -1,0 +1,49 @@
+.contacts {
+  display: flex;
+  justify-content: center;
+  width: 280px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.contacts__link {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0px 5px;
+  border-radius: 50%;
+  border: 3px solid $text-main;
+}
+
+.contacts__link--github {
+  background-image: url("../img/github-icon.svg");
+  background-size: 40px 40px;
+  background-position-y: -1px;
+  background-position-x: center;
+  background-repeat: no-repeat;
+}
+
+.contacts__link--mail {
+  background-image: url("../img/mail-icon.svg");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position-y: 7px;
+  background-position-x: 7px;
+}
+
+.contacts__link--skype {
+  background-image: url("../img/skype-icon.svg");
+  background-size: 25px 25px;
+  background-position-y: 7px;
+  background-position-x: 7px;
+  background-repeat: no-repeat;
+}
+
+.contacts__link:hover {
+  box-shadow: 0px 0px 2px 2px $text-main;
+}
+
+.contacts__link:active {
+  border-color: $text-second;
+  box-shadow: 0px 0px 2px 2px $text-second;
+}
