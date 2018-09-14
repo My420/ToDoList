@@ -41,3 +41,32 @@
 .page-footer__button:active {
   color: $text-second;
 }
+
+@media (min-width: $tablet) {
+
+  .page-footer {
+    padding-bottom: 10px;
+    top: 118px;
+    left: 0vh;
+    width: 100vw;
+    height: 60px;
+  }
+
+}
+
+@media (min-width: $pc) {
+ .page-footer {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    top: auto;
+    bottom: 0vh;
+    left: 0vh;
+    width: 100vw;
+    height: 60px;
+  }
+
+  .page-footer__button {
+    display: none;
+  }
+
+}

@@ -48,3 +48,16 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+@media (min-width: $tablet) {
+  body {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  input, textarea, output {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+}

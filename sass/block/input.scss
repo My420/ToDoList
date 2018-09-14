@@ -21,3 +21,9 @@
 .input__button {
   display: none;
 }
+
+@media (min-width: $tablet) {
+  .input {
+    width: 500px;
+  }
+}

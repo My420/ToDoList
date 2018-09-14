@@ -1,4 +1,18 @@
 .app {
-  padding-top: 91px;
-  padding-bottom: 43px;
+  padding-top: 95px;
+  padding-bottom: 49px;
+}
+
+@media (min-width: $tablet) {
+  .app {
+    padding-top: 123px;
+    padding-bottom: 49px;
+  }
+}
+
+@media (min-width: $pc) {
+  .app {
+    padding-top: 139px;
+    padding-bottom: 84px;
+  }
 }
