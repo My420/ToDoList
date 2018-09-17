@@ -1,4 +1,5 @@
 import showScreen from './showScreen.js';
+import template from './template.js';
 
 export default class ListView {
 
@@ -11,27 +12,6 @@ export default class ListView {
     this.footer = document.querySelector(`.page-footer`);
     this._sortType = `all`;
     this.bind();
-  }
-
-  getElementTemplate(element, number) {
-
-      return `<li class="tasks__item" data-number="${number}">
-            <input class="tasks__checkbox visually-hidden" id="${number}" type="checkbox" ${element.state ? `checked` : ``}>
-            <label class="tasks__label" for="${number}"></label>
-            <label class="tasks__text" for="${number}">${element.task}</label>
-        </li>`
-  }
-
-  getListTemplate(list) {
-    return list.map( (element, i) => {
-                return this.getElementTemplate(element, i);
-            }).join(``);
-  }
-
-  createElement(html) {
-    const template = document.createElement(`template`);
-    template.innerHTML = html;
-    return template.content;
   }
 
   bind() {
@@ -53,23 +33,45 @@ export default class ListView {
   }
 
   render(list) {
-    const element = this.createElement(this.getListTemplate(list));
+    const element = template.createElement(template.getListTemplate(list));
     showScreen(element);
   }
 
   addItem(item) {
-    const element = this.createElement(this.getElementTemplate(...item));
+    const element = template.createElement(template.getElementTemplate(...item));
     showScreen(element, false);
-    this.userInput.value = ``;
-    this.userInput.blur();
+    /*this.userInput.value = ``;*/
+    /*this.userInput.blur();*/
   }
 
   deleteItem(item) {
-    /*
-    анимация удаления
-    затем либо рендерим весь лист либо удаляем элементы те что надо отдельно
-    */
 
+    if (item.length === 0 /*|| this.sortType === `active`*/) {
+      return new Promise((resolve, reject)=>{ return resolve(`deleted from page`)});
+    } else {
+
+        let promise = new Promise((resolve, reject) => {
+
+          const deletedElements = item.map((elem) => {
+            return document.querySelector(`li[data-number='${elem}']`);
+          });
+
+          deletedElements.forEach((elem) => {
+            elem.classList.add(`animation-deleted`);
+          });
+
+          setTimeout(() => {
+              resolve(`deleted from page`);
+          }, 2000);
+
+        });
+
+      return promise;
+    }
+  }
+
+  changeFooterView(evt) {
+    this.footer.classList.toggle(`page-footer--close`);
   }
 
   onInputEnter(evt) {
@@ -87,10 +89,6 @@ export default class ListView {
 
   onHashChange(sortType) {
 
-  }
-
-  changeFooterView(evt) {
-    this.footer.classList.toggle(`page-footer--close`);
   }
 
 }

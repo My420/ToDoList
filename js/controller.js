@@ -37,8 +37,13 @@ export default class Controller {
       const action = evt.target.dataset.action;
 
       if(action === `delete`) {
-        this.view.deleteItem(this.model.deleteItem()); /*анимация удаления асинхронная --- по окончанию рендерим лист заного ---- или отдельно удаляем элементы(есть смысл?)*/
-        this.view.render(this._sortTaskList(this.view.sortType));
+
+        this.view.deleteItem(this.model.deleteItem()).then( () => {
+          this.view.render(this._sortTaskList(this.view.sortType));
+        }).catch( (error) => {
+          this.view.render(this._sortTaskList(this.view.sortType));
+        });
+
       } else {
         location.hash = action;
       }

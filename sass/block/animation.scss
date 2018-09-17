@@ -1,0 +1,23 @@
+.animation-deleted {
+  animation-name: deleted;
+  animation-duration: 2000ms;
+  animation-timing-function: linear;
+}
+
+@keyframes deleted {
+  0% {
+      transform: translateX(0px);
+      background-color: transparent;
+    }
+
+  50% {
+      transform: translateX(-50vw);
+      background-color: $bg-main-2;
+    }
+
+  100% {
+      transform: translateX(-100vw);
+    }
+
+}
+

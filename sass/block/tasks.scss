@@ -4,10 +4,12 @@
 }
 
 .tasks__list {
+  position: relative;
   list-style: none;
 }
 
 .tasks__item {
+  position: relative;
   box-sizing: border-box;
   width: 100%;
   min-height: 50px;
