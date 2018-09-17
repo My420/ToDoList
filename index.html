@@ -37,51 +37,6 @@
     <section class="app__task-list tasks">
       <h3 class="visually-hidden">Задачи</h3>
       <ul class="tasks__list">
-        <li class="tasks__item">
-            <input class="tasks__checkbox visually-hidden" id="1" type="checkbox">
-            <label class="tasks__label" for="1"></label>
-            <label class="tasks__text" for="1">asdads</label>
-        </li>
-        <li class="tasks__item">
-          <input class="tasks__checkbox visually-hidden" id="2" type="checkbox">
-          <label class="tasks__label" for="2"></label>
-          <label class="tasks__text" for="2">asdads asdasdas </label>
-        </li>
-        <li class="tasks__item">
-          <input class="tasks__checkbox visually-hidden" id="3" type="checkbox">
-          <label class="tasks__label" for="3"></label>
-          <label class="tasks__text" for="3">asdads asdasdas</label>
-        </li>
-         <li class="tasks__item">
-          <input class="tasks__checkbox visually-hidden" id="4" type="checkbox">
-          <label class="tasks__label" for="4"></label>
-          <label class="tasks__text" for="4">asdads asdasdas</label>
-        </li>
-         <li class="tasks__item">
-          <input class="tasks__checkbox visually-hidden" id="5" type="checkbox">
-          <label class="tasks__label" for="5"></label>
-          <label class="tasks__text" for="5">asdadsf</label>
-        </li>
-         <li class="tasks__item">
-          <input class="tasks__checkbox visually-hidden" id="6" type="checkbox">
-          <label class="tasks__label" for="6"></label>
-          <label class="tasks__text" for="6">asdads asdasdas dasdad sdfsdfsdfsdfsdf</label>
-        </li>
-         <li class="tasks__item">
-          <input class="tasks__checkbox visually-hidden" id="7" type="checkbox">
-          <label class="tasks__label" for="7"></label>
-          <label class="tasks__text" for="7">asdads asdasdas dasdad sdfsdfsdfsdfsdf sdfsdfsdfssdf </label>
-        </li>
-         <li class="tasks__item">
-          <input class="tasks__checkbox visually-hidden" id="7" type="checkbox">
-          <label class="tasks__label" for="7"></label>
-          <label class="tasks__text" for="7">asdads asdasdas</label>
-        </li>
-         <li class="tasks__item">
-          <input class="tasks__checkbox visually-hidden" id="7" type="checkbox">
-          <label class="tasks__label" for="7"></label>
-          <label class="tasks__text" for="7">asdads asdasdas f</label>
-        </li>
       </ul>
     </section>
 
@@ -89,20 +44,20 @@
       <h3 class="visually-hidden">Управление</h3>
       <section class="controls__delete">
         <h4 class="visually-hidden">Удаление</h4>
-        <button class="controls__button controls__button--delete">Delete</button>
+        <button class="controls__button controls__button--delete" data-action="delete">Delete</button>
       </section>
       <section class="controls__sort">
         <h4 class="controls__label">Sort:</h4>
-        <button class="controls__button controls__button--sortAll controls__button--active">All</button>
-        <button class="controls__button controls__button--sortActive">Active</button>
-        <button class="controls__button controls__button--sortComplited">Complited</button>
+        <button class="controls__button controls__button--sortAll controls__button--active" data-action="all">All</button>
+        <button class="controls__button controls__button--sortActive" data-action="active">Active</button>
+        <button class="controls__button controls__button--sortComplited" data-action="complited">Complited</button>
       </section>
     </section>
 
 
   </main>
 
-  <footer class="page-footer page-footer--clos">
+  <footer class="page-footer page-footer--close">
     <button class="page-footer__button"><span class="visually-hidden">Закрыть контакты</span>X</button>
     <ul class="page-footer__contacts contacts">
       <li class="contacts__item">

@@ -1,5 +1,4 @@
 .page-footer {
-  display: block;
   position: fixed;
   z-index: 2;
   display: flex;
@@ -67,6 +66,10 @@
 
   .page-footer__button {
     display: none;
+  }
+
+  .page-footer--close {
+    display: flex;
   }
 
 }
