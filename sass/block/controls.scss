@@ -27,17 +27,21 @@
   display: inline-block;
 }
 
-.controls__button:hover {
+.controls__button:hover:not([disabled]) {
   box-shadow: 0px 0px 2px 2px;
 }
 
-.controls__button:active {
+.controls__button:active:not([disabled]) {
   box-shadow: 0px 0px 2px 2px $text-main;
   color: $text-main;
 }
 
 .controls__button--delete:before {
   transform: rotate(-45deg);
+}
+
+.controls__button--delete[disabled] {
+  opacity: 0.2;
 }
 
 .controls__button--active {

@@ -10,7 +10,6 @@ export default class ListView {
     this.footerOpenBatton = document.querySelector(`.page-header__button`);
     this.footerCloseBatton = document.querySelector(`.page-footer__button`);
     this.footer = document.querySelector(`.page-footer`);
-    this._sortType = `all`;
     this.bind();
   }
 
@@ -20,33 +19,30 @@ export default class ListView {
     this.controls.addEventListener(`click`, (evt) => {this.onControlsClick(evt)});
     this.footerOpenBatton.addEventListener(`click`, (evt) => {this.changeFooterView(evt)});
     this.footerCloseBatton.addEventListener(`click`, (evt) => {this.changeFooterView(evt)});
-    location.hash = `all`;
-    window.onhashchange = () => {this.onHashChange(this.sortType)};
+
   }
 
-  set sortType(type) {
-    this._sortType = type;
-  }
 
-  get sortType() {
-    return this._sortType;
-  }
-
-  render(list) {
-    const element = template.createElement(template.getListTemplate(list));
+  render(list, sortType) {
+    const element = template.createElement(template.getListTemplate(list, sortType));
     showScreen(element);
   }
 
-  addItem(item) {
-    const element = template.createElement(template.getElementTemplate(...item));
+  addItem(item, sortType) {
+    const element = template.createElement(template.getElementTemplate(...item, sortType));
+    element.querySelector(`li`).classList.add(`animation-add`);
     showScreen(element, false);
-    /*this.userInput.value = ``;*/
-    /*this.userInput.blur();*/
+    setTimeout(() => {
+              document.querySelector(`li[data-number='${item[1]}']`).classList.remove(`animation-add`);
+          }, 1000);
+
+    this.userInput.value = ``;
+    this.userInput.blur();
   }
 
   deleteItem(item) {
 
-    if (item.length === 0 /*|| this.sortType === `active`*/) {
+    if (item.length === 0) {
       return new Promise((resolve, reject)=>{ return resolve(`deleted from page`)});
     } else {
 

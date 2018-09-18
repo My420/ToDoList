@@ -21,3 +21,32 @@
 
 }
 
+
+.animation-add {
+  animation-name: add;
+  animation-duration: 1000ms;
+  animation-timing-function: linear;
+}
+
+@keyframes add {
+  0% {
+      transform: scale(0);
+      background-color: transparent;
+      border-color: #50C878;
+    }
+
+  50% {
+      transform: scale(0.5);
+      background-color: #50C878;
+      border-color: #50C878;
+    }
+
+  100% {
+      transform: scale(1);
+      background-color: transparent;
+      border-color: $bg-main-2;
+    }
+
+}
+
+

@@ -8,7 +8,10 @@ export default class Controller {
   }
 
   init() {
-    this.view.render(this.model.list);
+    location.hash = `all`;
+    window.onhashchange = () => {this.onHashChange(location.hash)};
+
+    this.view.render(this.model.list, location.hash);
     this.view.onInputEnter = this.onInputEnter.bind(this);
     this.view.onListClick = this.onListClick.bind(this);
     this.view.onControlsClick = this.onControlsClick.bind(this);
@@ -19,7 +22,7 @@ export default class Controller {
     if(evt.keyCode === 13 && evt.target.value !== ``) {
       const task = evt.target.value;
       const newItem = this.model.addItem(task);
-      this.view.addItem(newItem);
+      this.view.addItem(newItem, location.hash);
     }
   }
 
@@ -38,40 +41,37 @@ export default class Controller {
 
       if(action === `delete`) {
 
+        evt.target.disabled = true;
+
         this.view.deleteItem(this.model.deleteItem()).then( () => {
-          this.view.render(this._sortTaskList(this.view.sortType));
+          this.view.render(this.model.list, location.hash);
+          evt.target.disabled = false;
         }).catch( (error) => {
-          this.view.render(this._sortTaskList(this.view.sortType));
+          this.view.render(this.model.list, location.hash);
+          evt.target.disabled = false;
         });
 
+
       } else {
+        const prevHash = location.hash.slice(1);
         location.hash = action;
+        this._changeActiveSortButton(prevHash, evt.target);
       }
     }
   }
 
-  _sortTaskList(type) {
-    if (type === `complited`) {
-      return this.model.list.filter((elem) => {return elem.state});
-    } else if (type === `active`) {
-      return this.model.list.filter((elem) => {return !elem.state});
-    } else {
-      return this.model.list;
-    }
-  }
+  _changeActiveSortButton(prevHash, newSortButton) {
 
-  onHashChange(prevSortType) {
-    const prevSortButton = document.querySelector(`button[data-action=${prevSortType}]`);
-    const newSortButton = document.querySelector(`button[data-action=${location.hash.slice(1)}]`);
-
-    this.view.sortType = location.hash.slice(1);
-
-    const sortedList = this._sortTaskList(this.view.sortType);
-
-    this.view.render(sortedList);
+    const prevSortButton = document.querySelector(`button[data-action=${prevHash}]`);
 
     prevSortButton.classList.remove(`controls__button--active`);
     newSortButton.classList.add(`controls__button--active`);
+  }
+
+
+  onHashChange(sortType) {
+
+   this.view.render(this.model.list, location.hash);
 
   }
 
