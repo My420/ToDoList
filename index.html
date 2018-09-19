@@ -6,23 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ToDoList — веб-сервис для управления задачами.">
   <meta name="keywords" content="todolist, список дел, список задач, управление задачами">
-  <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/png"> -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
   <link href="css/style.min.css" rel="stylesheet">
   <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/opensanslight.woff2" as="font" type="font/woff2" crossorigin>
 </head>
-<body class="main_page">
+
+<body class="main-page">
 
   <div class="page-header__wrapper container">
     <header class="page-header">
+
       <h1 class="page-header__title">ToDoList</h1>
 
-      <section class="app__input-field input">
+      <section class="page-header__input input">
         <h3 class="visually-hidden">Поле ввода</h3>
         <label class="visually-hidden" for="text-input">Введите задачу</label>
         <input  class="input__field" id="text-input" type="text" placeholder="What needs to be done?">
-        <button class="input__button button"><span class="visually-hidden">Записать</span></button>
       </section>
 
       <button class="page-header__button"><span class="visually-hidden">Контакты</span>&#105;</button>
@@ -53,7 +54,6 @@
         <button class="controls__button controls__button--sortComplited" data-action="completed">Completed</button>
       </section>
     </section>
-
 
   </main>
 

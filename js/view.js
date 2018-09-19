@@ -19,9 +19,7 @@ export default class ListView {
     this.controls.addEventListener(`click`, (evt) => {this.onControlsClick(evt)});
     this.footerOpenBatton.addEventListener(`click`, (evt) => {this.changeFooterView(evt)});
     this.footerCloseBatton.addEventListener(`click`, (evt) => {this.changeFooterView(evt)});
-
   }
-
 
   render(list, sortType) {
     const element = template.createElement(template.getListTemplate(list, sortType));
@@ -33,8 +31,8 @@ export default class ListView {
     element.querySelector(`li`).classList.add(`animation-add`);
     showScreen(element, false);
     setTimeout(() => {
-              document.querySelector(`li[data-number='${item[1]}']`).classList.remove(`animation-add`);
-          }, 1000);
+      document.querySelector(`li[data-number='${item[1]}']`).classList.remove(`animation-add`);
+    }, 1000);
 
     this.userInput.value = ``;
     this.userInput.blur();
@@ -46,21 +44,21 @@ export default class ListView {
       return new Promise((resolve, reject)=>{ return resolve(`deleted from page`)});
     } else {
 
-        let promise = new Promise((resolve, reject) => {
+      let promise = new Promise((resolve, reject) => {
 
-          const deletedElements = item.map((elem) => {
-            return document.querySelector(`li[data-number='${elem}']`);
-          });
-
-          deletedElements.forEach((elem) => {
-            elem.classList.add(`animation-deleted`);
-          });
-
-          setTimeout(() => {
-              resolve(`deleted from page`);
-          }, 2000);
-
+        const deletedElements = item.map((elem) => {
+          return document.querySelector(`li[data-number='${elem}']`);
         });
+
+        deletedElements.forEach((elem) => {
+          elem.classList.add(`animation-deleted`);
+        });
+
+        setTimeout(() => {
+          resolve(`deleted from page`);
+        }, 2000);
+
+      });
 
       return promise;
     }

@@ -27,6 +27,7 @@ export default class Store {
         return true;
       } else {
         deleteItemNumber.push(i);
+        return false;
       }
     });
 

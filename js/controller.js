@@ -8,8 +8,11 @@ export default class Controller {
   }
 
   init() {
+
     location.hash = `all`;
-    window.onhashchange = () => {this.onHashChange(location.hash)};
+    window.onhashchange = () => {
+      this.onHashChange(location.hash);
+    };
 
     this.view.render(this.model.list, location.hash);
     this.view.onInputEnter = this.onInputEnter.bind(this);
@@ -19,7 +22,7 @@ export default class Controller {
   }
 
   onInputEnter(evt) {
-    if(evt.keyCode === 13 && evt.target.value !== ``) {
+    if (evt.keyCode === 13 && evt.target.value !== ``) {
       const task = evt.target.value;
       const newItem = this.model.addItem(task);
       this.view.addItem(newItem, location.hash);
@@ -35,22 +38,21 @@ export default class Controller {
   }
 
   onControlsClick(evt) {
-    if(evt.target.tagName === `BUTTON`) {
+    if (evt.target.tagName === `BUTTON`) {
 
       const action = evt.target.dataset.action;
 
-      if(action === `delete`) {
+      if (action === `delete`) {
 
         evt.target.disabled = true;
 
-        this.view.deleteItem(this.model.deleteItem()).then( () => {
+        this.view.deleteItem(this.model.deleteItem()).then(() => {
           this.view.render(this.model.list, location.hash);
           evt.target.disabled = false;
-        }).catch( (error) => {
+        }).catch((error) => {
           this.view.render(this.model.list, location.hash);
           evt.target.disabled = false;
         });
-
 
       } else {
         const prevHash = location.hash.slice(1);
@@ -71,7 +73,7 @@ export default class Controller {
 
   onHashChange(sortType) {
 
-   this.view.render(this.model.list, location.hash);
+    this.view.render(this.model.list, location.hash);
 
   }
 
