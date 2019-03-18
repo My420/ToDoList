@@ -1,8 +1,8 @@
 {
-  "name": "pixel-hunter",
+  "name": "ToDoList",
   "version": "0.1.0",
   "private": true,
-  "description": "Личный проект «Пиксель хантер» от HTML Academy",
+  "description": "ToDoList",
   "scripts": {
     "eslint": "eslint js/",
     "build": "gulp build",
